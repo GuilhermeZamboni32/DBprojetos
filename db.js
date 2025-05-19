@@ -14,7 +14,7 @@ async function connect() {
         })
         
         const client = await pool.connect(); // Conectandooo
-        console.log("Connection pool created successfully!")
+        console.log("Conexão pool foi criada com sucesso!!!")
     
         const resdb = await client.query("SELECT now()");
         console.log(resdb.rows[0]); // Tomando a primeira posição do array de onde virá o tempo do banco de dados.
@@ -33,7 +33,7 @@ async function connect() {
         const client = await connect();
 
         //consulta sql
-        const sql = "INSERT INTO cliente (cpf, nome, email, idade, profissao) VALUES ($1, $2, $3, $4, $5)";
+        const sql = "INSERT INTO clientes (cpf, nome, email, idade, profissao) VALUES ($1, $2, $3, $4, $5)";
 
         const values =[costmer.cpf, costmer.nome, costmer.email, costmer.idade, costmer.profissao];
         
